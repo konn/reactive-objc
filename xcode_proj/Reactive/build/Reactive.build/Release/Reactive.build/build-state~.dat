@@ -1,0 +1,353 @@
+TReactive
+v6
+r1
+cCheck dependencies
+cProcessPCH /var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch.pch Reactive/Reactive-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/AppDelegate.o /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/main.o /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/MacOS/Reactive normal x86_64
+cCopyStringsFile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/en.lproj/InfoPlist.strings Reactive/en.lproj/InfoPlist.strings
+cCpResource Reactive/en.lproj/Credits.rtf build/Release/Reactive.app/Contents/Resources/en.lproj/Credits.rtf
+cCompileXIB /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Base.lproj/MainMenu.xib
+cCompileAssetCatalog /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Images.xcassets
+cProcessInfoPlistFile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Info.plist /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Info.plist
+cGenerateDSYMFile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app.dSYM /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/MacOS/Reactive
+cTouch /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c000000005347C66A00000000000000AA
+t1397212778
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c0000000052ECF0BF000000000000044C
+t1391259839
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c0000000053213E9000000000000001DE
+t1394687632
+s478
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+c0000000052198ED8000000000000253C
+t1377406680
+s9532
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
+c0000000053213E930000000000000ADC
+t1394687635
+s2780
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m
+c0000000054126ADF000000000000014F
+t1410493151
+s335
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Base.lproj/MainMenu.xib
+c0000000054126B64000000000000CD56
+t1410493284
+s52566
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Images.xcassets
+c0000000054126ADF0000000000000066
+t1410493151
+s102
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Info.plist
+c0000000054126ADF0000000000000451
+t1410493151
+s1105
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Prefix.pch
+c0000000054126ADF00000000000000AC
+t1410493151
+s172
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/en.lproj/Credits.rtf
+c0000000054126ADF00000000000001B4
+t1410493151
+s436
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/en.lproj/InfoPlist.strings
+c0000000054126ADF000000000000002D
+t1410493151
+s45
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/main.m
+c0000000054126ADF00000000000000FA
+t1410493151
+s250
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/AppDelegate.o
+t1410493448
+s31824
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/Reactive.LinkFileList
+c0000000054126C07000000000000013D
+t1410493447
+s317
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/main.o
+t1410493448
+s3456
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/assetcatalog_dependencies.txt
+t1410493448
+s314
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/assetcatalog_generated_info.plist
+t1410493448
+s181
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app
+t1410493447
+s102
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app.dSYM
+t2
+s0
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Info.plist
+t1410493448
+s1419
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/MacOS/Reactive
+t1410493448
+s15200
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/PkgInfo
+t1410493448
+s8
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/Base.lproj/MainMenu.nib
+t1410493448
+s41446
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/en.lproj/Credits.rtf
+t1410493448
+s436
+
+N/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/en.lproj/InfoPlist.strings
+t1410493448
+s92
+
+N/var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch.pch
+t1410493448
+s125816
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesa96ce487a3c2b941^a7ceef87a3c2b941^---0#1#1#--18"Check dependencies36"FE4D945C-0165-4A67-A964-69DE795DCFFE-
+
+CCompileAssetCatalog /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Images.xcassets
+s432186248.433213
+e432186248.711337
+r1
+xCompileAssetCatalog
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Images.xcassets
+o/* com.apple.actool.compilation-results */
+o/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/Assets.car
+o/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/assetcatalog_generated_info.plist
+o
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"[1mCompileAssetCatalog[0m build/Release/Reactive.app/Contents/Resources [1mReactive/Images.xcassets[0m106"[1mCompileAssetCatalog[0m build/Release/Reactive.app/Contents/Resources [1mReactive/Images.xcassets[0md7fa6e88a3c2b941^931ab688a3c2b941^-343"/* com.apple.actool.compilation-results *//Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/Assets.car/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/assetcatalog_generated_info.plist-0#0#1#-19%DVTDocumentLocation2@114"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Images.xcassets/0000000000000000^1019"[1mCompileAssetCatalog[0m build/Release/Reactive.app/Contents/Resources [1mReactive/Images.xcassets[0m    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    /Applications/Xcode.app/Contents/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/assetcatalog_dependencies.txt --output-partial-info-plist /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/assetcatalog_generated_info.plist --app-icon AppIcon --platform macosx --minimum-deployment-target 10.9 --target-device mac --compile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Images.xcassets36"0C649AC1-FED5-4011-AEE5-13BD9E081F3A-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
+CCompileC build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/AppDelegate.o /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s432186248.263271
+e432186248.393009
+r1
+xCompileC
+xbuild/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/AppDelegate.o
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m
+d/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.h
+o[1m/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m:11:17: [0m[0;1;35mwarning: [0m[1m
+o      method definition for 'clicked:' not found [-Wincomplete-implementation][0m
+o@implementation AppDelegate
+o[0;1;32m                ^
+o[0mIn file included from /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m:9:
+o[1m/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.h:16:1: [0m[0;1;30mnote: [0m
+o      method 'clicked:' declared here[0m
+o- (IBAction)clicked:(id)sender;
+o[0;1;32m^
+o[0m1 warning generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m197"[1mCompileC[0m build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/AppDelegate.o [1mReactive/AppDelegate.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler98884388a3c2b941^1b9c6488a3c2b941^-668"[1m/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m:11:17: [0m[0;1;35mwarning: [0m[1m      method definition for 'clicked:' not found [-Wincomplete-implementation][0m@implementation AppDelegate[0;1;32m                ^[0mIn file included from /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m:9:[1m/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.h:16:1: [0m[0;1;30mnote: [0m      method 'clicked:' declared here[0m- (IBAction)clicked:(id)sender;[0;1;32m^[0m1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@42"Method definition for 'clicked:' not found-432186248#18446744073709551615#0#1(2@31"Method 'clicked:' declared here-432186248#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@111"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.h0000000000000000^15#0#15#0#343#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@111"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m0000000000000000^10#16#10#16#187#0#14"Semantic Issue--0#0#1#-19%DVTDocumentLocation4@111"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m0000000000000000^3680"[1mCompileC[0m build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/AppDelegate.o [1mReactive/AppDelegate.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -fvisibility=hidden -Wno-sign-conversion -iquote /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-generated-files.hmap -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-own-target-headers.hmap -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-all-target-headers.hmap -iquote /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-project-headers.hmap -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/DerivedSources/x86_64 -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/DerivedSources -F/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release -include /var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch -MMD -MT dependencies -MF /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/AppDelegate.d --serialize-diagnostics /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/AppDelegate.dia -c /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/AppDelegate.m -o /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/AppDelegate.o36"5B750A2D-EA63-46AA-BC33-59678A13300F-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
+CCompileC build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/main.o /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s432186248.263568
+e432186248.304257
+r1
+xCompileC
+xbuild/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/main.o
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/main.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Compile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/main.m183"[1mCompileC[0m build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/main.o [1mReactive/main.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compileraf964388a3c2b941^65e34d88a3c2b941^---0#0#1#-19%DVTDocumentLocation2@104"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/main.m0000000000000000^3638"[1mCompileC[0m build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/main.o [1mReactive/main.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -fvisibility=hidden -Wno-sign-conversion -iquote /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-generated-files.hmap -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-own-target-headers.hmap -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-all-target-headers.hmap -iquote /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-project-headers.hmap -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/DerivedSources/x86_64 -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/DerivedSources -F/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release -include /var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch -MMD -MT dependencies -MF /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/main.dia -c /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/main.m -o /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/main.o36"9C8290E5-BBC9-4DEF-AF30-AF39F6992AD4-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
+CCompileXIB /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Base.lproj/MainMenu.xib
+s432186248.432787
+e432186248.588255
+r1
+xCompileXIB
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Base.lproj/MainMenu.xib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"Compiling /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Base.lproj/MainMenu.xib59"[1mCompileXIB[0m [1mReactive/Base.lproj/MainMenu.xib[0m8bdd6e88a3c2b941^d7a19688a3c2b941^---0#0#1#-19%DVTDocumentLocation2@121"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Base.lproj/MainMenu.xib0000000000000000^677"[1mCompileXIB[0m [1mReactive/Base.lproj/MainMenu.xib[0m    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 10.9 --output-format human-readable-text --compile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/Base.lproj/MainMenu.nib /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Base.lproj/MainMenu.xib36"2F6A5001-01FF-4907-A68E-CF498B98D6C1-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
+CCopyStringsFile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/en.lproj/InfoPlist.strings Reactive/en.lproj/InfoPlist.strings
+s432186248.432410
+e432186248.435204
+r1
+xCopyStringsFile
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/en.lproj/InfoPlist.strings
+xReactive/en.lproj/InfoPlist.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection40"Copy Reactive/en.lproj/InfoPlist.strings132"[1mCopyStringsFile[0m build/Release/Reactive.app/Contents/Resources/en.lproj/InfoPlist.strings Reactive/en.lproj/InfoPlist.stringsdcd66e88a3c2b941^a9696f88a3c2b941^---0#0#1#-19%DVTDocumentLocation2@124"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/en.lproj/InfoPlist.strings0000000000000000^488"[1mCopyStringsFile[0m build/Release/Reactive.app/Contents/Resources/en.lproj/InfoPlist.strings Reactive/en.lproj/InfoPlist.strings    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding UTF-16 --outdir /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/en.lproj -- Reactive/en.lproj/InfoPlist.strings36"9EEA7A38-4AC2-43A3-BB2E-A144F672BC14-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
+CCpResource Reactive/en.lproj/Credits.rtf build/Release/Reactive.app/Contents/Resources/en.lproj/Credits.rtf
+s432186248.432551
+e432186248.434431
+r1
+xCpResource
+xReactive/en.lproj/Credits.rtf
+xbuild/Release/Reactive.app/Contents/Resources/en.lproj/Credits.rtf
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Copy build/Release/Reactive.app/Contents/Resources/en.lproj/Credits.rtf115"[1mCpResource[0m Reactive/en.lproj/Credits.rtf build/Release/Reactive.app/Contents/Resources/en.lproj/Credits.rtf91d06e88a3c2b941^3c506f88a3c2b941^---0#0#1#-19%DVTDocumentLocation2@155"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/en.lproj/Credits.rtf0034e46dddffdf42^692"[1mCpResource[0m Reactive/en.lproj/Credits.rtf build/Release/Reactive.app/Contents/Resources/en.lproj/Credits.rtf    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/en.lproj/Credits.rtf /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Resources/en.lproj36"524C8BEC-C829-4C00-A97C-FB8BA1798730-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
+CGenerateDSYMFile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app.dSYM /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/MacOS/Reactive
+s432186248.714639
+e432186248.737381
+r1
+xGenerateDSYMFile
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app.dSYM
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/MacOS/Reactive
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection122"Generate /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app.dSYM115"[1mGenerateDSYMFile[0m [1mbuild/Release/Reactive.app.dSYM[0m build/Release/Reactive.app/Contents/MacOS/Reactive5800b788a3c2b941^42cdbc88a3c2b941^---0#0#1#-19%DVTDocumentLocation2@120"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app.dSYM0034e46dddffdf42^555"[1mGenerateDSYMFile[0m [1mbuild/Release/Reactive.app.dSYM[0m build/Release/Reactive.app/Contents/MacOS/Reactive    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/MacOS/Reactive -o /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app.dSYM36"27B6668E-9E48-4CFC-8227-EA0ED918C64B-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
+CLd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/MacOS/Reactive normal x86_64
+s432186248.393735
+e432186248.431420
+r1
+xLd
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/MacOS/Reactive
+xnormal
+xx86_64
+d/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/Reactive.LinkFileList
+d/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/AppDelegate.o
+d/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/main.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/IOKit.framework/IOKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/IOSurface.framework/IOSurface
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/DiskArbitration.framework/DiskArbitration
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Security.framework/Security
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_stats.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/QuartzCore.framework/Versions/A/Frameworks/CoreImage.framework/Versions/A/CoreImage
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/QuartzCore.framework/Versions/A/Frameworks/ScalableUserInterface.framework/Versions/A/ScalableUserInterface
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection137"Link /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/MacOS/Reactive75"[1mLd[0m build/Release/Reactive.app/Contents/MacOS/Reactive normal x86_6455dc6488a3c2b941^22726e88a3c2b941^---0#0#1#--1223"[1mLd[0m build/Release/Reactive.app/Contents/MacOS/Reactive normal x86_64    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    export MACOSX_DEPLOYMENT_TARGET=10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release -F/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release -filelist /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/Reactive.LinkFileList -mmacosx-version-min=10.9 -fobjc-arc -fobjc-link-runtime -framework Cocoa -Xlinker -dependency_info -Xlinker /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Objects-normal/x86_64/Reactive_dependency_info.dat -o /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/MacOS/Reactive36"F0988D66-1DA5-4B45-9BD1-E63ACB10ACF1-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
+CProcessInfoPlistFile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Info.plist /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Info.plist
+s432186248.712158
+e432186248.714100
+r1
+xProcessInfoPlistFile
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Info.plist
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"Process /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Info.plist112"[1mProcessInfoPlistFile[0m build/Release/Reactive.app/Contents/Info.plist [1mReactive/Reactive-Info.plist[0mbf65b688a3c2b941^2dd0b688a3c2b941^---0#0#1#-19%DVTDocumentLocation2@117"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Info.plist0000000000000000^833"[1mProcessInfoPlistFile[0m build/Release/Reactive.app/Contents/Info.plist [1mReactive/Reactive-Info.plist[0m    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    builtin-infoPlistUtility /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Info.plist -genpkginfo /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/PkgInfo -expandbuildsettings -platform macosx -additionalcontentfile /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/assetcatalog_generated_info.plist -o /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app/Contents/Info.plist36"8C92F32E-DA09-4633-8AC3-24DD33D1FE7B-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
+CProcessPCH /var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch.pch Reactive/Reactive-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s432186247.941259
+e432186248.262619
+r1
+xProcessPCH
+x/var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch.pch
+xReactive/Reactive-Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Precompile Reactive/Reactive-Prefix.pch304"[1mProcessPCH[0m /var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch.pch Reactive/Reactive-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler7a1df187a3c2b941^b83b4388a3c2b941^---0#0#1#-19%DVTDocumentLocation2@117"file:///Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Prefix.pch0000000000000000^3679"[1mProcessPCH[0m /var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch.pch Reactive/Reactive-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=80 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -fvisibility=hidden -Wno-sign-conversion -iquote /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-generated-files.hmap -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-own-target-headers.hmap -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-all-target-headers.hmap -iquote /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/Reactive-project-headers.hmap -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/DerivedSources/x86_64 -I/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Reactive.build/Release/Reactive.build/DerivedSources -F/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release --serialize-diagnostics /var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch.d -c /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/Reactive/Reactive-Prefix.pch -o /var/folders/kx/b482swtn08j3w8bwjkm3rw7m0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Reactive-Prefix-bnpestfhgearjuamutgstnhrbump/Reactive-Prefix.pch.pch36"47360D3D-556C-46F2-B82C-C29CB70E5B5D-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
+CTouch /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app
+s432186248.737925
+e432186248.742816
+r1
+xTouch
+x/Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Touch /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app40"[1mTouch[0m build/Release/Reactive.app90f5bc88a3c2b941^4129be88a3c2b941^---0#0#1#--261"[1mTouch[0m build/Release/Reactive.app    cd /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive    /usr/bin/touch -c /Users/hiromi/Documents/Programming/Haskell/lab/objc/reactive/xcode_proj/Reactive/build/Release/Reactive.app36"37E14269-8F29-4367-B606-A5D25FE1B1C0-
+b12784581-5FC2-4950-BD32-834A00E9A168
+
