@@ -55,8 +55,7 @@ objc_interface [cunit|
 @property (assign, nonatomic) typename NSTextField *notif;
 // IBActions
 - (typename IBAction) clicked:(id) sender;
-- (void)              control:(typename NSControl *) control
-         textShouldEndEditing:(typename NSText*) text;
+- (void) controlTextDidChange:(typename NSNotification*) aNotification;
 @end
 |]
 
@@ -78,10 +77,9 @@ objc_implementation [Typed 'newSession, Typed 'onClick, Typed 'onTextChanged]
   NSLog(@"session initialized.");
 }
 
-- (void)              control:(typename NSControl *) control
-         textShouldEndEditing:(typename NSText*) text
+- (void) controlTextDidChange:(typename NSNotification*) aNotification
 {
-  onTextChanged(self.session, [text string]);
+  onTextChanged(self.session, [[[aNotification userInfo] objectForKey: @"NSFieldEditor"] string]);
 }
 
 // IBAction
