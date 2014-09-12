@@ -15,9 +15,9 @@
     // Insert code here to initialize your application
 }
 
-- (void)clicked:(id)sender
+- (void)controlTextDidChange:(NSNotification *)obj
 {
-    // Noop
+    // OK
 }
 
 @end

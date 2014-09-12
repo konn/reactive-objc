@@ -11,7 +11,9 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSTextField *notif;
+@property (assign) IBOutlet NSTextField *dollars;
+@property (assign) IBOutlet NSTextField *rate;
+@property (assign) IBOutlet NSTextField *result;
 
-- (IBAction)clicked:(id)sender;
+- (IBAction)controlTextDidChange:(NSNotification *)obj;
 @end

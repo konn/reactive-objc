@@ -6,33 +6,33 @@ LDFLAGS = -package template-haskell -package language-c-quote -package language-
           -package sodium -package lens \
           -framework Cocoa -optl-ObjC -threaded
 
-OBJS = Main.o App.o App_objc.o AppDelegate.o AppDelegate_objc.o MyBridge.o
+OBJS = Main.o App.o App_objc.o AppDelegate.o AppDelegate_objc.o
+APP  = Reactive
 
-default: Reactive.app/Contents/MacOS/Reactive
+default: $(APP).app/Contents/MacOS/$(APP)
 
 %.o: %.hs
 	$(HC) -c $< $(HCFLAGS)
 
-AppDelegate.o: MyBridge.o
+AppDelegate.o:
 App.o:
 Main.o: App.o AppDelegate.o
-MyBridge.o:
 
 App_objc.m: App.o
 AppDelegate_objc.m: AppDelegate.o
 
-Reactive: $(OBJS)
+$(APP): $(OBJS)
 	$(HC) -o $@ $^ $(LDFLAGS)
 
-Reactive.app:
-	xcodebuild -project xcode_proj/Reactive/Reactive.xcodeproj;
-	cp -r xcode_proj/Reactive/build/Release/Reactive.app .
+$(APP).app:
+	xcodebuild -project xcode_proj/$(APP)/$(APP).xcodeproj;
+	cp -r xcode_proj/$(APP)/build/Release/$(APP).app .
 
-Reactive.app/Contents/MacOS/Reactive: Reactive Reactive.app
+$(APP).app/Contents/MacOS/$(APP): $(APP) $(APP).app
 	cp $< $@
 
 .PHONY: clean
 
 clean:
-	rm -rf Reactive.app
-	rm -f *.o *.hi App_objc.[hm] AppDelegate_objc.[hm] *_stub.h Reactive
+	rm -rf $(APP).app
+	rm -f *.o *.hi App_objc.[hm] AppDelegate_objc.[hm] *_stub.h $(APP)

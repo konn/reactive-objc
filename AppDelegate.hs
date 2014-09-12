@@ -2,6 +2,7 @@
 module AppDelegate (objc_initialise) where
 
   -- language-c-inline
+import Control.Applicative
 import Data.Typeable          (Typeable)
 import FRP.Sodium
 import Language.C.Inline.ObjC
@@ -9,19 +10,19 @@ import Language.C.Quote.ObjC
 
   -- friends
 
-objc_import ["<Cocoa/Cocoa.h>", "MyBridge.h"]
+objc_import ["<Cocoa/Cocoa.h>"]
 
 type Listener a = a -> IO ()
 
-data Session = Session { onClick_       :: Listener ()
-                       , onTextChanged_ :: Listener String
+data Session = Session { dollarsChanged_ :: Listener Int
+                       , rateChanged_    :: Listener Int
                        } deriving (Typeable)
 
-onClick :: Session -> () -> IO ()
-onClick = onClick_
+rateChanged :: Session -> Int -> IO ()
+rateChanged = rateChanged_
 
-onTextChanged :: Session -> String -> IO ()
-onTextChanged = onTextChanged_
+dollarsChanged :: Session -> Int -> IO ()
+dollarsChanged = dollarsChanged_
 
 newtype NSTextField = NSTextField (ForeignPtr NSTextField)
                       deriving (Typeable)
@@ -38,28 +39,28 @@ nsLog msg = $(objc ['msg :> ''String] $ void [cexp| NSLog(@"%@", msg) |])
 
 newSession :: NSTextField -> IO Session
 newSession tf = sync $ do
-    (clkEv, clkL) <- newEvent
-    (txtBh, txtL) <- newBehaviour ""
-    listen clkEv $ \() -> $(objc ['tf :> Class ''NSTextField] $
-                            void $ [cexp| [tf setStringValue: @"Clicked!"] |])
-    listen (value txtBh) $ \val ->
-       $(objc ['val :> ''String, 'tf :> Class ''NSTextField] $
-              void $ [cexp| [tf setStringValue: val] |])
-    return $ Session (sync . clkL) (sync . txtL)
+    (dolBh, dolL) <- newBehaviour 0
+    (ratBh, ratL) <- newBehaviour 0
+    listen (value $ (*) <$> dolBh <*> ratBh) $ \val ->
+       $(objc ['val :> ''Int, 'tf :> Class ''NSTextField] $
+              void $ [cexp| [tf setIntValue: val] |])
+    return $ Session (sync . dolL) (sync . ratL)
 
 objc_interface [cunit|
 @interface AppDelegate : NSResponder <NSApplicationDelegate, NSControlTextEditingDelegate>
 
 // IBOutlets
-@property (weak, nonatomic) typename NSWindow    *window;
-@property (assign, nonatomic) typename NSTextField *notif;
+@property (assign,nonatomic) typename NSWindow    *window;
+@property (assign,nonatomic) typename NSTextField *dollars;
+@property (assign,nonatomic) typename NSTextField *rate;
+@property (assign,nonatomic) typename NSTextField *result;
+
 // IBActions
-- (typename IBAction) clicked:(id) sender;
-- (void) controlTextDidChange:(typename NSNotification*) aNotification;
+- (void)controlTextDidChange:(typename NSNotification *)obj;
 @end
 |]
 
-objc_implementation [Typed 'newSession, Typed 'onClick, Typed 'onTextChanged]
+objc_implementation [Typed 'newSession, Typed 'dollarsChanged, Typed 'rateChanged]
   [cunit|
 
 @interface AppDelegate ()
@@ -72,21 +73,19 @@ objc_implementation [Typed 'newSession, Typed 'onClick, Typed 'onTextChanged]
 
 - (void)applicationDidFinishLaunching:(typename NSNotification *)aNotification
 {
-  NSLog(@"hello!");
-  self.session = newSession(self.notif);
-  NSLog(@"session initialized.");
+  self.session = newSession(self.result);
 }
 
 - (void) controlTextDidChange:(typename NSNotification*) aNotification
 {
-  onTextChanged(self.session, [[[aNotification userInfo] objectForKey: @"NSFieldEditor"] string]);
+  typename NSTextField *sender = [aNotification object];
+  if ( sender == self.dollars ) {
+    dollarsChanged(self.session, [self.dollars intValue]);
+  } else if ( sender == self.rate ) {
+    rateChanged(self.session, [self.rate intValue]);
+  }
 }
 
-// IBAction
-- (void) clicked: (id) sender
-{
-  onClick(self.session, NULL);
-}
 @end
 |]
 

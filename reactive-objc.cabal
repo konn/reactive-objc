@@ -9,7 +9,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Hiromi ISHII
 maintainer:          konn.jinro_at_gmail.com
--- copyright:           
+copyright:           2014 (c) Hiromi ISHII
 category:            Utility
 build-type:          Simple
 extra-source-files:  README.md MyBridge.h MyBridge.m Makefile
@@ -29,6 +29,7 @@ executable Reactive
                        language-c-inline >=0.7 && <0.8, 
                        language-c-quote >=0.8 && <0.9,
                        shake,
-                       sodium
+                       sodium,
+                       Cabal, split
   default-language:    Haskell2010
   frameworks:          Cocoa
