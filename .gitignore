@@ -1,0 +1,6 @@
+*_stub.h
+*_objc.[cmh]
+dist
+xcode_proj/*/build
+Reactive.app
+Reactive
