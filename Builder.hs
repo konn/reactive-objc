@@ -16,7 +16,7 @@ main = shakeArgs shakeOptions{shakeFiles=build} $ do
   phony "clean" $ do
     putNormal "cleaning..."
     removeFilesAfter "_build" ["//*"]
-    removeFilesAfter "" ["//*_objc.m", "//*_objc.h"]
+    removeFilesAfter "" ["//*_objc.m", "//*_objc.h", "//*_stub.h"]
 
   build </> app <.> "app" *> \out -> do
     putNormal "setting up for bundle..."
@@ -41,6 +41,7 @@ main = shakeArgs shakeOptions{shakeFiles=build} $ do
         dep = out -<.> "dep"
         obcBase = dropExtension (dropDirectory1 out) ++ "_objc"
         obcm = obcBase <.> "m"
+        obch = obcBase <.> "h"
     putNormal $ "generating deps for: " ++ hs
     command_ [] "ghc" ["-M", "-dep-suffix", "", "-dep-makefile", dep, hs]
     needMakefileDependencies dep
@@ -48,10 +49,13 @@ main = shakeArgs shakeOptions{shakeFiles=build} $ do
     gen'd <- doesFileExist obcm
     when gen'd $ do
       putNormal $ "compiling gen'd file: " ++ obcm
-      cmd "cc" "-fobjc-arc"
+      () <- cmd "mv" obcm (build </> obcm)
+      () <- cmd "mv" obch (build </> obch)
+      () <- cmd "cc" "-fobjc-arc"
         "-I/Library/Frameworks/GHC.framework/Versions/7.8.3-x86_64/usr/lib/ghc-7.8.3/include"
         "-I/Library/Frameworks/GHC.framework/Versions/7.8.3-x86_64/usr/lib/ghc-7.8.3/../../includes"
-        "-c -o" (build </> obcBase <.> "o") obcm
+        "-c -o" (build </> obcBase <.> "o") (build </> obcm)
+      cmd "rm" "-f" $ dropExtension (dropDirectory1 out) ++ "_stub" <.> "h"
     putNormal $ "built: " ++ out
 
 
