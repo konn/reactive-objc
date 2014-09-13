@@ -78,16 +78,21 @@ defineSelector sel cls recv args mret expr = do
       sendDec = 
         funD 'send' [clause [varP recName, conP conName $ map (varP . getName) args]
                      (normalB body) [] ]
+  aliasSig <- sigD funName $ foldr funT [t| Message $(toSym sel) |] $ map (liftM snd) typs
+  aliasDec <- funD funName [ clause [] (normalB $ conE conName) []]
   ds <- head <$> [d| type instance Returns $(toSym sel) = IO $(fromMaybe [t| () |] mret) |]
   inst <- instanceD (return []) [t| Selector $(toSym $ nameBase cls) $(toSym sel) |] $
           [msgDec, return ds, sendDec]
   
-  return [inst]
+  return [inst, aliasSig, aliasDec]
   where
     recName = mkName recv
     toSym   = litT . strTyLit
-    funName = camelCase sel
+    funName = mkName $ camelCase sel
     conName = mkName $ strictCamelCase sel
+
+funT :: TypeQ -> TypeQ -> TypeQ
+funT a b = appT (appT arrowT a) b
 
 camelCase :: String -> String
 camelCase "" = ""

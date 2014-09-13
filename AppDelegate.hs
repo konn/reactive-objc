@@ -49,7 +49,7 @@ newSession :: NSTextField -> IO Session
 newSession tf = sync $ do
     (dolBh, dolL) <- newBehaviour 0
     (ratBh, ratL) <- newBehaviour 0
-    listen (value $ (*) <$> dolBh <*> ratBh) $ send tf . SetIntValue
+    listen (value $ (*) <$> dolBh <*> ratBh) $ send tf . setIntValue
     return $ Session (sync . dolL) (sync . ratL)
 
 objc_interface [cunit|
