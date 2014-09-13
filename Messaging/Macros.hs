@@ -2,7 +2,7 @@
 {-# LANGUAGE MultiParamTypeClasses, OverloadedStrings, QuasiQuotes   #-}
 {-# LANGUAGE StandaloneDeriving, TemplateHaskell, TypeOperators, TupleSections      #-}
 module Messaging.Macros (defineClass, definePhantomClass, idMarshaller,
-                         defineSelector, Argument(..)) where
+                         defineSelector, SelectorDef(..), newSelector, Argument(..)) where
 import           Control.Applicative        ((<$>))
 import           Control.Monad              (replicateM)
 import           GHC.TypeLits               (Symbol)
@@ -70,11 +70,22 @@ argType (Defined name) = do
 argType (_ :>: a)  = a
 argType (_ :>>: a) = conT a
 
-defineSelector :: String -> Name -> String -> [Argument] -> Maybe TypeQ -> QC.Exp -> DecsQ
-defineSelector sel cls recv args mret expr = do
+data SelectorDef = Selector { selector :: String
+                            , reciever :: (Name, String)
+                            , arguments :: [Argument]
+                            , environment :: [Annotated Name]
+                            , returnType  :: Maybe TypeQ
+                            , definition  :: QC.Exp
+                            }
+
+newSelector :: SelectorDef
+newSelector = Selector "" (undefined, "recv") [] [] Nothing undefined
+
+defineSelector :: SelectorDef -> DecsQ
+defineSelector (Selector sel (cls, recv) args env mret expr) = do
   let typs = map (liftM (NotStrict, ) . argType) args
       msgDec = dataInstD (return []) ''Message [toSym sel] [normalC conName typs] []
-      body = objc ((recName :> conT cls) : map toAnnotation args) $ maybe void (<:) mret expr
+      body = objc ((recName :> conT cls) : map toAnnotation args ++ env) $ maybe void (<:) mret expr
       sendDec = 
         funD 'send' [clause [varP recName, conP conName $ map (varP . getName) args]
                      (normalB body) [] ]
