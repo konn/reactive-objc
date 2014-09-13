@@ -9,6 +9,7 @@ import Language.C.Inline.ObjC
 import Language.C.Quote.ObjC
 
   -- friends
+import Messaging hiding (objc_initialise)
 
 objc_import ["<Cocoa/Cocoa.h>"]
 
@@ -24,9 +25,6 @@ rateChanged = rateChanged_
 dollarsChanged :: Session -> Int -> IO ()
 dollarsChanged = dollarsChanged_
 
-newtype NSTextField = NSTextField (ForeignPtr NSTextField)
-                      deriving (Typeable)
-
 objc_typecheck
 
 marshTF :: NSTextField -> IO NSTextField
@@ -41,9 +39,7 @@ newSession :: NSTextField -> IO Session
 newSession tf = sync $ do
     (dolBh, dolL) <- newBehaviour 0
     (ratBh, ratL) <- newBehaviour 0
-    listen (value $ (*) <$> dolBh <*> ratBh) $ \val ->
-       $(objc ['val :> ''Int, 'tf :> Class ''NSTextField] $
-              void $ [cexp| [tf setIntValue: val] |])
+    listen (value $ (*) <$> dolBh <*> ratBh) $ send tf . SetIntValue
     return $ Session (sync . dolL) (sync . ratL)
 
 objc_interface [cunit|
