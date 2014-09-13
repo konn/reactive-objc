@@ -30,6 +30,6 @@ executable Reactive
                        language-c-quote >=0.8 && <0.9,
                        shake,
                        sodium,
-                       Cabal, split
+                       Cabal, split, template-haskell
   default-language:    Haskell2010
   frameworks:          Cocoa
