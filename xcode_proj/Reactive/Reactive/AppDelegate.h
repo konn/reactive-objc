@@ -14,6 +14,7 @@
 @property (assign) IBOutlet NSTextField *dollars;
 @property (assign) IBOutlet NSTextField *rate;
 @property (assign) IBOutlet NSTextField *result;
+@property (assign) IBOutlet NSTextField *mouseLabel;
 
 - (IBAction)controlTextDidChange:(NSNotification *)obj;
 @end
