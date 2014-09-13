@@ -42,11 +42,6 @@ dollarsChanged = dollarsChanged_
 
 objc_typecheck
 
-marshTF :: NSTextField -> IO NSTextField
-marshTF = return
-
-objc_marshaller 'marshTF 'marshTF
-
 nsLog :: String -> IO ()
 nsLog msg = $(objc ['msg :> ''String] $ void [cexp| NSLog(@"%@", msg) |])
 
