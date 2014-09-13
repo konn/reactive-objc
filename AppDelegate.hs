@@ -1,17 +1,39 @@
-{-# LANGUAGE DeriveDataTypeable, QuasiQuotes, TemplateHaskell #-}
+{-# LANGUAGE DataKinds, DeriveDataTypeable, FlexibleInstances    #-}
+{-# LANGUAGE MultiParamTypeClasses, QuasiQuotes, TemplateHaskell #-}
+{-# LANGUAGE TypeFamilies                                        #-}
 module AppDelegate (objc_initialise) where
+import Messaging
 
-  -- language-c-inline
 import Control.Applicative
 import Data.Typeable          (Typeable)
 import FRP.Sodium
 import Language.C.Inline.ObjC
 import Language.C.Quote.ObjC
 
-  -- friends
-import Messaging hiding (objc_initialise)
-
 objc_import ["<Cocoa/Cocoa.h>"]
+
+defineClass "NSObject"    Nothing
+idMarshaller ''NSObject
+
+defineClass "NSString"    (Just ''NSObject)
+idMarshaller ''NSString
+
+defineClass "NSControl"   (Just ''NSObject)
+idMarshaller ''NSControl
+
+defineClass "NSTextField" (Just ''NSControl)
+idMarshaller ''NSTextField
+
+instance Selector "NSControl" "intValue" where
+  type Returns "intValue" = IO Int
+  data Message "intValue" = IntValue
+  send' ctrl IntValue = $(objc ['ctrl :> ''NSControl] $ ''Int <: [cexp| [ctrl intValue] |])
+
+instance Selector "NSControl" "setIntValue" where
+  type Returns "setIntValue" = IO ()
+  data Message "setIntValue" = SetIntValue Int
+  send' ctrl (SetIntValue i)
+    = $(objc ['ctrl :> ''NSControl, 'i :> ''Int] $ void [cexp| [ctrl setIntValue: i] |])
 
 type Listener a = a -> IO ()
 

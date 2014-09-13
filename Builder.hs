@@ -61,45 +61,58 @@ getPackageName (Dependency (PackageName name) _) = name
 
 buildWith :: AppSetting -> Rules ()
 buildWith AppSetting {..} = do
-  let dbs = prefixing "-package-db" packDBs
-  want [build </> app <.> "app"]
+  let dbs  = prefixing "-package-db" packDBs
+      dest = app <.> "app"
+      skeleton = build </> app <.> "app"
+      exe = build </> app
+      xcode = "xcode_proj" </> app </> app <.> "xcodeproj"
+  want [dest]
+
   phony "clean" $ do
     putNormal "cleaning..."
-    removeFilesAfter "_build" ["//*"]
-    removeFilesAfter "" ["//*_objc.m", "//*_objc.h", "//*_stub.h", "//*.hi"]
+    remove <- doesDirectoryExist build
+    when remove $
+      removeFilesAfter build ["//*"]
+
+    remove' <- doesDirectoryExist dest
+    when remove $
+      removeFilesAfter dest ["//*"]
+
+  dest *> \out -> do
+    putNormal "setting up for bundle..."
+    need [skeleton, exe]
+    remove <- doesDirectoryExist dest
+    when remove $ removeFilesAfter dest ["//*"]
+    () <- cmd "mv" "-f" skeleton out
+    copyFile' exe (out </> "Contents" </> "MacOS" </> app)
+    putNormal "Application bundle successfully compiled."
 
   build </> app <.> "app" *> \out -> do
-    putNormal "setting up for bundle..."
+    need [xcode]
     putNormal "compiling xcodeproj..."
-    () <- cmd "xcodebuild -project" ("xcode_proj" </> app </> app <.> "xcodeproj")
-    () <- cmd "mv" "-f" ("xcode_proj" </> app </> "build/Release" </> app <.> "app") out
-    need [build </> app]
-    copyFile' (build </> app) (out </> "Contents/MacOS" </> app)
+    () <- cmd "xcodebuild -project" xcode
+    cmd "mv" "-f" ("xcode_proj" </> app </> "build/Release" </> app <.> "app") out
 
   build </> app *> \out -> do
     hss <- getDirectoryFiles "" ["//*.hs"]
     let objs = [build </> hs -<.> "o" | hs <- hss, hs `notElem` ["Setup.hs", "Builder.hs"]]
-    putNormal $ "needed objects: " ++ unwords objs
     need objs
     addObs <- getDirectoryFiles "" ["_build//*_objc.o"]
-    putNormal $ "linking executable with: " ++ unwords (objs ++ addObs)
-    putNormal $ "link: " ++ unwords (["ghc -o", out] ++ objs ++ addObs ++ ldFlags ++ dbs)
-    cmd "ghc -o" out (objs ++ addObs) ldFlags dbs
+    putNormal $ "linking executable... "
+    cmd "ghc" "-o" out "-odir" build "-hidir" build "-stubdir" build "-outputdir" build
+              (objs ++ addObs) ldFlags dbs
 
-  "//*.hi" *> \out -> need [build </> out -<.> "o"]
-
-  "_build//*.o" *> \out -> do
+  ["_build//*.o", "_build//*.hi"] &*> \ [out, hi] -> do
     putNormal $ "building object: " ++ out
     let hs = dropDirectory1 $ out -<.> "hs"
         dep = out -<.> "dep"
-        hi  = out -<.> "hi"
         obcBase = dropExtension (dropDirectory1 out) ++ "_objc"
         obcm = obcBase <.> "m"
         obch = obcBase <.> "h"
-    putNormal $ "generating deps for: " ++ hs
-    command_ [] "ghc" $ ["-M", "-dep-suffix", "", "-dep-makefile", dep, hs] ++ dbs
+    command_ [] "ghc" $ [ "-M", "-odir", build, "-hidir", build
+                        , "-dep-suffix", "", "-dep-makefile", dep, hs] ++ dbs
     needMakefileDependencies dep
-    () <- cmd "ghc" "-c" hs "-o" out dbs
+    () <- cmd "ghc" "-c" hs "-dynamic" "-o" out dbs "-odir" build "-hidir" build ("-i" ++ build)
     gen'd <- doesFileExist obcm
     when gen'd $ do
       putNormal $ "compiling gen'd file: " ++ obcm
