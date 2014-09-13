@@ -45,8 +45,8 @@ genSubtypes name (Just super) = do
   let geq = ''(:>)
       geqT = AppT (AppT (ConT geq) (ConT ''Symbol)) (ConT ''Symbol)
   ClassI _ insts <- reify ''(:>)
-  let supers = [ typ | InstanceD [] (AppT (AppT geqT typ) sub) _ <- insts
-                     , sub == super]
+  let supers = [ typ | InstanceD [] (AppT (AppT geqT0 typ) sub) _ <- insts
+                     , sub == super, geqT0 == geqT]
   concat <$> mapM (\s -> [d| instance $(return s) :> $name |]) (super:supers)
 
 data Argument = Defined Name
