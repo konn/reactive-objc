@@ -1,15 +1,23 @@
 {-# LANGUAGE DataKinds, DeriveDataTypeable, FlexibleInstances, GADTs #-}
 {-# LANGUAGE MultiParamTypeClasses, OverloadedStrings, QuasiQuotes   #-}
-{-# LANGUAGE StandaloneDeriving, TemplateHaskell, TypeOperators      #-}
-module Messaging.Macros (defineClass, definePhantomClass, idMarshaller) where
-import Control.Applicative ((<$>))
-import Control.Monad       (replicateM)
-import Data.Typeable
-import GHC.TypeLits        (Symbol)
-import Messaging.Core
-import Language.C.Inline.ObjC
-import Language.Haskell.TH
-import Language.Haskell.TH.Syntax
+{-# LANGUAGE StandaloneDeriving, TemplateHaskell, TypeOperators, TupleSections      #-}
+module Messaging.Macros (defineClass, definePhantomClass, idMarshaller,
+                         defineSelector, Argument(..)) where
+import           Control.Applicative        ((<$>))
+import           Control.Monad              (replicateM)
+import           GHC.TypeLits               (Symbol)
+import           Language.C.Inline.ObjC
+import qualified Language.C.Quote           as QC
+import           Language.C.Quote.ObjC
+import           Language.Haskell.TH
+import           Language.Haskell.TH.Syntax
+import           Messaging.Core
+import Data.Char (isLower)
+import Data.Char (isUpper)
+import Data.Char (toLower)
+import Data.Char (toUpper)
+import Control.Monad (liftM)
+import Data.Maybe (fromMaybe)
 
 defineClass :: String -> Maybe Name -> DecsQ
 defineClass = definePhantomClass 0
@@ -41,3 +49,66 @@ genSubtypes name (Just super) = do
                      , sub == super]
   concat <$> mapM (\s -> [d| instance $(return s) :> $name |]) (super:supers)
 
+data Argument = Defined Name
+              | String :>:  TypeQ
+              | String :>>: Name
+
+getName :: Argument -> Name
+getName (Defined name) = name
+getName (str :>: _)    = mkName str
+getName (str :>>: _)   = mkName str
+
+toAnnotation :: Argument -> Annotated Name
+toAnnotation (Defined name) = Typed name
+toAnnotation (str :>: a)    = mkName str :> a
+toAnnotation (str :>>: a)   = mkName str :> a
+
+argType :: Argument -> TypeQ
+argType (Defined name) = do
+  VarI _ typ _ _ <- reify name
+  return typ
+argType (_ :>: a)  = a
+argType (_ :>>: a) = conT a
+
+defineSelector :: String -> Name -> String -> [Argument] -> Maybe TypeQ -> QC.Exp -> DecsQ
+defineSelector sel cls recv args mret expr = do
+  let typs = map (liftM (NotStrict, ) . argType) args
+      msgDec = dataInstD (return []) ''Message [toSym sel] [normalC conName typs] []
+      body = objc ((recName :> conT cls) : map toAnnotation args) $ maybe void (<:) mret expr
+      sendDec = 
+        funD 'send' [clause [varP recName, conP conName $ map (varP . getName) args]
+                     (normalB body) [] ]
+  ds <- head <$> [d| type instance Returns $(toSym sel) = IO $(fromMaybe [t| () |] mret) |]
+  inst <- instanceD (return []) [t| Selector $(toSym $ nameBase cls) $(toSym sel) |] $
+          [msgDec, return ds, sendDec]
+  
+  return [inst]
+  where
+    recName = mkName recv
+    toSym   = litT . strTyLit
+    funName = camelCase sel
+    conName = mkName $ strictCamelCase sel
+
+camelCase :: String -> String
+camelCase "" = ""
+camelCase (c : cs)
+  | isLower c = c : cs
+  | otherwise =
+    case span isUpper cs of
+      (us, rest@(_:_)) | not $ null us -> map toLower (c : init us) ++ last us : rest
+      (us, rest) -> map toLower (c:us) ++ rest
+
+strictCamelCase :: String -> String
+strictCamelCase "" = ""
+strictCamelCase xs@(x:_)
+  | isUpper x = xs
+  | otherwise =                      
+  case camelCase xs of
+    c : cs -> toUpper c : cs
+    _ -> xs
+
+{- Macro Design
+
+defineSelector "setIntValue" ''NSControl "ctrl" ["i" :> ''Int] $
+  ''Int <: [cexp| [ctrl setIntValue: i] |]
+-}

@@ -24,16 +24,9 @@ idMarshaller ''NSControl
 defineClass "NSTextField" (Just ''NSControl)
 idMarshaller ''NSTextField
 
-instance Selector "NSControl" "intValue" where
-  type Returns "intValue" = IO Int
-  data Message "intValue" = IntValue
-  send' ctrl IntValue = $(objc ['ctrl :> ''NSControl] $ ''Int <: [cexp| [ctrl intValue] |])
-
-instance Selector "NSControl" "setIntValue" where
-  type Returns "setIntValue" = IO ()
-  data Message "setIntValue" = SetIntValue Int
-  send' ctrl (SetIntValue i)
-    = $(objc ['ctrl :> ''NSControl, 'i :> ''Int] $ void [cexp| [ctrl setIntValue: i] |])
+defineSelector "intValue"    ''NSControl "ctrl" [] (Just [t| Int |]) [cexp| [ctrl intValue] |]
+defineSelector "setIntValue" ''NSControl "ctrl" ["i" :>>: ''Int] Nothing
+               [cexp| [ctrl setIntValue: i] |]
 
 type Listener a = a -> IO ()
 
