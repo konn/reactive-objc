@@ -1,5 +1,8 @@
 Build
 =====
 
-> $ make
+```sh
+$ ./Builder.hs
+$ open Reactive.app
+```
 
