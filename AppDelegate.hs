@@ -288,8 +288,7 @@ textChanged sess notif = do
   rate <- rateField $ application sess
   if sender === dollars
     then dollarsChanged sess =<< dollars # intValue
-    else rateChanged sess =<< rate # intValue
-  return ()
+    else rateChanged    sess =<< rate    # intValue
 
 newSession :: AppDelegate -> IO Session
 newSession app = do
