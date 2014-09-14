@@ -15,6 +15,9 @@ objc_import ["<Cocoa/Cocoa.h>", "HsFFI.h"]
 defineClass "NSObject"    Nothing
 idMarshaller ''NSObject
 
+defineClass "NSNotification"    (Just ''NSObject)
+idMarshaller ''NSNotification
+
 defineClass "NSString"    (Just ''NSObject)
 idMarshaller ''NSString
 
@@ -38,30 +41,43 @@ data Position = Position { xCoord :: Double, yCoord :: Double
                          } deriving (Read, Show, Eq, Ord, Typeable)
 
 
+newtype MyPosition = MyPosition (ForeignPtr MyPosition)
+                     deriving (Show, Eq, Ord, Typeable)
+
+objc_typecheck
+
 newPosition :: Double -> Double -> Position
 newPosition = Position
 
-objc_record "" "Position" ''Position  [Typed 'newPosition]
+objc_record "My" "Position" ''Position  [Typed 'newPosition]
   [ [objcprop| @property (readonly) double x; |] --> 'xCoord
   , [objcprop| @property (readonly) double y; |] --> 'yCoord
   ]
   [objcifdecls|
     + (instancetype)positionWithX:(double)x y:(double)y;
-    // + (instancetype)positionWithNSPoint:(typename NSPoint)pt;
+    + (instancetype)positionWithNSPoint:(typename NSPoint)pt;
   |]
   [objcimdecls|
     + (instancetype)positionWithX:(double)x y:(double)y
     {
-       return [[Position alloc] initWithPositionHsPtr: newPosition(x,y)];
+       return [[MyPosition alloc] initWithPositionHsPtr: newPosition(x,y)];
     }
-/*
     + (instancetype)positionWithNSPoint:(typename NSPoint)pt {
-       return [[Position alloc] initWithPositionHsPtr: newPosition(pt.x,pt.y)];
+       return [[MyPosition alloc] initWithPositionHsPtr: newPosition(pt.x,pt.y)];
     }
-*/
   |]
 
+positionToMyPosition :: Position -> IO MyPosition
+positionToMyPosition pos
+  = $(objc ['pos :> ''Position] $
+      Class ''MyPosition <: [cexp| [[MyPosition alloc] initWithPositionHsPtr: pos] |])
 
+myPositionToPosition :: MyPosition -> IO Position
+myPositionToPosition myPos
+  = $(objc ['myPos :> Class ''MyPosition] $
+            ''Position <: [cexp| newPosition([myPos x], [myPos y]) |])
+
+objc_marshaller 'positionToMyPosition 'myPositionToPosition
 
 data Size = Size { width :: Float, height :: Float
                  } deriving (Read, Show, Eq, Ord, Typeable)
@@ -70,54 +86,81 @@ data Size = Size { width :: Float, height :: Float
 newSize :: Float -> Float -> Size
 newSize = Size
 
+newtype MySize = MySize (ForeignPtr MySize)
+               deriving (Typeable, Eq, Ord, Show)
+
+objc_typecheck
+
 objc_record "My" "Size" ''Size  [Typed 'newSize]
   [ [objcprop| @property (readonly) double width; |] --> 'width
   , [objcprop| @property (readonly) double height; |] --> 'height
   ]
   [objcifdecls|
     + (instancetype)sizeWithWidth:(float)w height:(float)h;
-    // + (instancetype)sizeWithNSSize:(typename NSSize)size;
+    + (instancetype)sizeWithNSSize:(typename NSSize)size;
   |]
   [objcimdecls|
     + (instancetype)sizeWithWidth:(float)w height:(float)h
     {
        return [[MySize alloc] initWithSizeHsPtr: newSize(w,h)];
     }
-/*
     + (instancetype)sizeWithNSSize:(typename NSSize)size {
        return [[MySize alloc] initWithSizeHsPtr: newSize(size.width,size.height)];
     }
-*/
   |]
 
-newtype MySize = MySize (ForeignPtr MySize)
-               deriving (Typeable)
+sizeToMySize :: Size -> IO MySize
+sizeToMySize size
+  = $(objc ['size :> ''Size] $
+      Class ''MySize <: [cexp| [[MySize alloc] initWithSizeHsPtr: size] |])
+
+mySizeToSize :: MySize -> IO Size
+mySizeToSize mySize
+  = $(objc ['mySize :> Class ''MySize] $
+            ''Size <: [cexp| newSize([mySize width], [mySize height]) |])
+
+objc_marshaller 'sizeToMySize 'mySizeToSize
 
 data Rect = Rect { origin :: Position, size :: Size
                  } deriving (Read, Show, Eq, Ord, Typeable)
 
 
-newRect ::  Double -> Double -> Float -> Float -> Rect
-newRect x y w h = Rect (Position x y) (Size w h)
+newRect :: Position -> Size -> Rect
+newRect = Rect
+
+newtype MyRect = MyRect (ForeignPtr MyRect)
+               deriving (Typeable, Eq, Ord, Show)
+
+objc_typecheck
 
 objc_record "My" "Rect" ''Rect  [Typed 'newRect]
-  [ [objcprop| @property (readonly) double origX; |]
-    ==> ([t| Double |], [| xCoord . origin |], [| \ p x -> p { origin = (origin p) { xCoord = x } } |])
-  , [objcprop| @property (readonly) double origY; |]
-    ==> ([t| Double |], [| yCoord . origin |], [| \ p y -> p { origin = (origin p) { yCoord = y } } |])
-  , [objcprop| @property (readonly) float width; |]
-    ==> ([t| Float |], [| width . size |], [| \ p w -> p { size = (size p) { width = w } } |])
-  , [objcprop| @property (readonly) float height; |]
-    ==> ([t| Float |], [| height . size |], [| \ p h -> p { size = (size p) { height = h } } |])
+  [ [objcprop| @property (readonly) typename MyPosition *origin; |]
+    --> 'origin
+  , [objcprop| @property (readonly) typename MySize *size; |]
+    --> 'size
   ]
   [objcifdecls|
     + (instancetype)rectWithNSRect:(typename NSRect)rect;
   |]
   [objcimdecls|
     + (instancetype)rectWithNSRect:(typename NSRect)rect {
-      return [[MyRect alloc] initWithRectHsPtr: newRect(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height)];
+      return [[MyRect alloc] initWithRectHsPtr: newRect([MyPosition positionWithNSPoint: rect.origin],
+                                                        [MySize sizeWithNSSize: rect.size])];
     }
   |]
+
+rectToMyRect :: Rect -> IO MyRect
+rectToMyRect rect
+  = $(objc ['rect :> ''Rect] $
+      Class ''MyRect <: [cexp| [[MyRect alloc] initWithRectHsPtr: rect] |])
+
+myRectToRect :: MyRect -> IO Rect
+myRectToRect myRect
+  = $(objc ['myRect :> Class ''MyRect] $
+            ''Rect <: [cexp| newRect([myRect origin], [myRect size]) |])
+
+objc_marshaller 'rectToMyRect 'myRectToRect
+
 
 defineSelector newSelector { selector = "intValue"
                            , reciever = (''NSControl, "ctrl")
@@ -146,61 +189,37 @@ defineSelector newSelector { selector = "setFrameOrigin"
 defineClass "NSEvent" (Just ''NSObject)
 idMarshaller ''NSEvent
 
+
 defineSelector newSelector { selector = "locationInWindow"
                            , reciever = (''NSEvent, "event")
                            , returnType = Just [t| Position |]
-                           , definition = [cexp| newPosition([event locationInWindow].x, [event locationInWindow].y) |]
+                           , definition = [cexp| [MyPosition positionWithNSPoint: [event locationInWindow]] |]
                            }
 
 defineSelector newSelector { selector = "mouseLocation"
                            , reciever = (''NSEvent, "event")
                            , returnType = Just [t| Position |]
-                           , definition = [cexp| newPosition([NSEvent mouseLocation].x, [NSEvent mouseLocation].y) |]
+                           , definition = [cexp| [MyPosition positionWithNSPoint: [NSEvent mouseLocation]] |]
                            }
 
 defineSelector newSelector { selector = "frame"
                            , reciever = (''NSWindow, "window")
                            , returnType = Just [t| Rect |]
-                           , definition = [cexp| newRect([window frame].origin.x, [window frame].origin.y,
-                                                         [window frame].size.width, [window frame].size.height) |]
+                           , definition = [cexp| [MyRect rectWithNSRect: [window frame]] |]
                            }
 
 
-type Listener a = a -> IO ()
+instance Selector "NSNotification" "object" where
+  data Message "object" = NotifObject
+  type Returns "object" = IO NSObject
+  send' aNotif NotifObject = $(objc ['aNotif :> Class ''NSNotification] $
+                               Class ''NSObject <: [cexp| [aNotif object] |])
 
-data Session = Session { dollarsChanged_ :: Listener Int
-                       , rateChanged_    :: Listener Int
-                       , mouseMoved_     :: Listener NSEvent
-                       } deriving (Typeable)
-
-
-rateChanged :: Session -> Int -> IO ()
-rateChanged = rateChanged_
-
-dollarsChanged :: Session -> Int -> IO ()
-dollarsChanged = dollarsChanged_
-
-mouseMoved :: Session -> NSEvent -> IO ()
-mouseMoved = mouseMoved_
-
-objc_typecheck
+object :: Message "object"
+object = NotifObject
 
 nsLog :: String -> IO ()
 nsLog msg = $(objc ['msg :> ''String] $ void [cexp| NSLog(@"%@", msg) |])
-
-newSession :: NSTextField -> NSTextField -> NSWindow -> IO Session
-newSession tf lab win = sync $ do
-    (dolBh, dolL) <- newBehaviour 0
-    (ratBh, ratL) <- newBehaviour 0
-    (mouseE, mouseL) <- newEvent
-    listen (value $ (*) <$> dolBh <*> ratBh) $ send tf . setIntValue
-    listen mouseE $ \ ev -> do
-      Rect (Position winX winY) _ <- win # frame
-      Position x y <- ev # mouseLocation
-      let (relX, relY) = (x - winX, y - winY)
-      lab # setStringValue (show (floor $ relX, floor $ relY))
-      lab # setFrameOrigin relX relY
-    return $ Session (sync . dolL) (sync . ratL) (sync . mouseL)
 
 objc_interface [cunit|
 @interface AppDelegate : NSResponder <NSApplicationDelegate, NSControlTextEditingDelegate>
@@ -217,7 +236,80 @@ objc_interface [cunit|
 @end
 |]
 
-objc_implementation [Typed 'mouseMoved, Typed 'newSession, Typed 'dollarsChanged, Typed 'rateChanged]
+type Listener a = a -> IO ()
+
+data Session = Session { dollarsChanged_ :: Listener Int
+                       , rateChanged_    :: Listener Int
+                       , mouseMoved_     :: Listener NSEvent
+                       , application     :: AppDelegate
+                       } deriving (Typeable)
+
+rateChanged :: Session -> Int -> IO ()
+rateChanged = rateChanged_
+
+dollarsChanged :: Session -> Int -> IO ()
+dollarsChanged = dollarsChanged_
+
+mouseMoved :: Session -> NSEvent -> IO ()
+mouseMoved = mouseMoved_
+
+newtype AppDelegate = AppDelegate (ForeignPtr AppDelegate)
+                      deriving (Typeable, Show, Eq, Ord)
+
+marshalAppDelegate :: AppDelegate -> IO AppDelegate
+marshalAppDelegate = return
+
+idMarshaller ''AppDelegate
+
+mainWindow :: AppDelegate -> IO NSWindow
+mainWindow app = $(objc ['app :> ''AppDelegate] $
+                   Class ''NSWindow <: [cexp| [app window] |])
+
+dollarsField :: AppDelegate -> IO NSTextField
+dollarsField app = $(objc ['app :> ''AppDelegate] $
+                     Class ''NSTextField <: [cexp| [app dollars] |])
+
+rateField :: AppDelegate -> IO NSTextField
+rateField app = $(objc ['app :> ''AppDelegate] $
+                  Class ''NSTextField <: [cexp| [app rate] |])
+
+resultField :: AppDelegate -> IO NSTextField
+resultField app = $(objc ['app :> ''AppDelegate] $
+                  Class ''NSTextField <: [cexp| [app result] |])
+
+mouseLabel :: AppDelegate -> IO NSTextField
+mouseLabel app = $(objc ['app :> ''AppDelegate] $
+                   Class ''NSTextField <: [cexp| [app mouseLabel] |])
+
+textChanged :: Session -> NSNotification -> IO ()
+textChanged sess notif = do
+  sender <- notif # object
+  dollars <- dollarsField $ application sess
+  rate <- rateField $ application sess
+  if sender === dollars
+    then dollarsChanged sess =<< dollars # intValue
+    else rateChanged sess =<< rate # intValue
+  return ()
+
+newSession :: AppDelegate -> IO Session
+newSession app = do
+  tf  <- resultField app
+  lab <- mouseLabel app
+  win <- mainWindow app
+  sync $ do
+    (dolBh, dolL) <- newBehaviour 0
+    (ratBh, ratL) <- newBehaviour 0
+    (mouseE, mouseL) <- newEvent
+    listen (value $ (*) <$> dolBh <*> ratBh) $ send tf . setIntValue
+    listen mouseE $ \ ev -> do
+      Rect (Position winX winY) _ <- win # frame
+      Position x y <- ev # mouseLocation
+      let (relX, relY) = (x - winX, y - winY)
+      lab # setStringValue (show (floor $ relX, floor $ relY))
+      lab # setFrameOrigin relX relY
+    return $ Session (sync . dolL) (sync . ratL) (sync . mouseL) app
+
+objc_implementation [Typed 'textChanged, Typed 'mouseMoved, Typed 'newSession]
   [cunit|
 
 @interface AppDelegate ()
@@ -230,19 +322,14 @@ objc_implementation [Typed 'mouseMoved, Typed 'newSession, Typed 'dollarsChanged
 
 - (void)applicationDidFinishLaunching:(typename NSNotification *)aNotification
 {
-  self.session = newSession(self.result, self.mouseLabel, self.window);
+  self.session = newSession(self);
   [NSEvent addGlobalMonitorForEventsMatchingMask:NSMouseMovedMask
            handler: ^(typename NSEvent *event){ mouseMoved(self.session, event); }];
 }
 
 - (void) controlTextDidChange:(typename NSNotification*) aNotification
 {
-  typename NSTextField *sender = [aNotification object];
-  if ( sender == self.dollars ) {
-    dollarsChanged(self.session, [self.dollars intValue]);
-  } else if ( sender == self.rate ) {
-    rateChanged(self.session, [self.rate intValue]);
-  }
+  textChanged(self.session, aNotification);
 }
 
 @end
